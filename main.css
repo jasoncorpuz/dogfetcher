@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: monospace;
+    font-size: 20px
+}
+
+section {
+    align-content: center;
+    
+}
+
+h1{
+    font-size:40px;
+}
+
+img {
+    width: 33%;
+    height: 300px;
+}
+
+.results {
+    display:flex;
+    width:100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+fieldset {
+    height:60px;
+    border:none;
+}
+
+ .number{
+    width:40px;
+    height:40px
+}
+
+.submit{
+    height: 50px;
+    width: 60px
+}
+
+.generator{
+    margin-top: 40px;
+}
