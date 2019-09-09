@@ -64,17 +64,24 @@ function searchHandle(){
 
 function fetchPups(result){
     fetch(`https://dog.ceo/api/breed/${result}/images/random`)
-    .then(response => response.json())
-    .then(responseJson => renderSearch(responseJson))
-    .catch(error => alert('error'))
+        .then(response => response.json())
+        .then(responseJson => renderSearch(responseJson))
+        .catch(error => alert(`there are no dogs named ${result}.`))
+    // CATCH WILL ONLY HAPPEN WHEN THERE IS NOTHING RESOLVED FROM SERVER
+
 
 }
+
+
 
 function renderSearch(responseJson) {
+    if (responseJson.status === "success") { // PSEUDO CATCH HERE
     console.log(responseJson.message)
     $('.searchresults').append(`<img src=${responseJson.message} alt='pupper'>`);
+} else {
+    alert(`${result} might not be a dog. try again.`)
+    }
 }
-
 function resetSearch(){
     $('.searchresults').html('');
 }
